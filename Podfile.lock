@@ -14,16 +14,27 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CocoaMarkdown (1.2.7)
+  - Masonry (1.1.0)
   - ReactiveObjC (3.1.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - BlocksKit (~> 2.2.5)
+  - CocoaMarkdown (~> 1.2.7)
+  - Masonry
   - ReactiveObjC (~> 3.1.1)
+  - YYKit (~> 1.0.9)
 
 SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CocoaMarkdown: c0c4707fd46ee03d5b662a3cd93560f0fe2b79b6
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1681527f56b64ad0a5eb4ced5da46c92bdaa8ea8
+PODFILE CHECKSUM: 4c6d2a752212c09ef6f40669f9feb7780ec0d794
 
 COCOAPODS: 1.4.0

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BA8A8C8436769310444AB47 /* libPods-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E04E4B98A32EAA58C78A379 /* libPods-UI.a */; };
+		9C4ADE3524B5ADC7007D22AF /* test.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C4ADE2F24B5ADC7007D22AF /* test.md */; };
 		9CC8A34824B41C620087D57C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8A34724B41C620087D57C /* AppDelegate.m */; };
 		9CC8A34B24B41C620087D57C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8A34A24B41C620087D57C /* SceneDelegate.m */; };
 		9CC8A34E24B41C620087D57C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8A34D24B41C620087D57C /* ViewController.m */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		1DE0E119D737CBB5AFAEF369 /* Pods-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI/Pods-UI.release.xcconfig"; sourceTree = "<group>"; };
 		6E04E4B98A32EAA58C78A379 /* libPods-UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4ADE2F24B5ADC7007D22AF /* test.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = test.md; path = ../../CocoaMarkdown/CocoaMarkdownTests/Resources/test.md; sourceTree = "<group>"; };
 		9CC8A34324B41C620087D57C /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC8A34624B41C620087D57C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CC8A34724B41C620087D57C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		9CC8A34524B41C620087D57C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9C4ADE2F24B5ADC7007D22AF /* test.md */,
 				9CC8A34624B41C620087D57C /* AppDelegate.h */,
 				9CC8A34724B41C620087D57C /* AppDelegate.m */,
 				9CC8A34924B41C620087D57C /* SceneDelegate.h */,
@@ -162,6 +165,7 @@
 			files = (
 				9CC8A35624B41C660087D57C /* LaunchScreen.storyboard in Resources */,
 				9CC8A35324B41C660087D57C /* Assets.xcassets in Resources */,
+				9C4ADE3524B5ADC7007D22AF /* test.md in Resources */,
 				9CC8A35124B41C620087D57C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,11 +200,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UI/Pods-UI-frameworks.sh",
+				"${PODS_ROOT}/CocoaMarkdown/CocoaMarkdown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaMarkdown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

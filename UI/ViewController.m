@@ -7,30 +7,44 @@
 //
 
 #import "ViewController.h"
+#import <CocoaMarkdown/CocoaMarkdown.h>
+#import <Masonry.h>
 
 @interface ViewController ()
-
+@property (nonatomic, strong) UITextView* textView;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    　
-//    [self.navigationController.navigationBar setTranslucent:NO];
+    self.textView = [UITextView new];
+    [self.view addSubview:self.textView];
+    [self.textView mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
+    }];
+    self.textView.contentInset = UIEdgeInsetsMake(0, 16, 0, 16);
     
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"md"]];
 
-//    [self setEdgesForExtendedLayout:UIRectEdgeNone];
-    
+    CMDocument* document = [[CMDocument alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"md"]  options:CMDocumentOptionsSourcepos];
 
-    UIView *view = [UIView new];
-    
-    view.frame = CGRectMake(0, 0, 100, 100);
-    view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:view];
-    
+    CMAttributedStringRenderer* render = [[CMAttributedStringRenderer alloc] initWithDocument:document attributes:[CMTextAttributes new]];
+
+//    [render registerHTMLElementTransformer:[CMHTMLStrikethroughTransformer new]]
+    self.textView.attributedText = [render render];;
+    //    [self.navigationController.navigationBar setTranslucent:NO];
+
+    //    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+
+//    UIView* view = [UIView new];
+//
+//    view.frame = CGRectMake(0, 0, 100, 100);
+//    view.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:view];
+
     // Do any additional setup after loading the view.
 }
-
 
 @end

@@ -8,5 +8,7 @@ target 'UI' do
   # Pods for UI
   pod 'ReactiveObjC', '~> 3.1.1'
   pod 'BlocksKit', '~> 2.2.5'
-
+  pod 'YYKit', '~> 1.0.9'
+  pod 'Masonry'
+  pod 'CocoaMarkdown', '~> 1.2.7'
 end
