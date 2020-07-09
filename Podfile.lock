@@ -15,6 +15,7 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - CocoaMarkdown (1.2.7)
+  - MarqueeLabel-ObjC (3.3.0)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.1)
   - SZTextView (1.3.0)
@@ -25,6 +26,7 @@ PODS:
 DEPENDENCIES:
   - BlocksKit (~> 2.2.5)
   - CocoaMarkdown (~> 1.2.7)
+  - MarqueeLabel-ObjC (~> 3.3.0)
   - Masonry
   - ReactiveObjC (~> 3.1.1)
   - SZTextView
@@ -33,11 +35,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CocoaMarkdown: c0c4707fd46ee03d5b662a3cd93560f0fe2b79b6
+  MarqueeLabel-ObjC: 696eaa82e4fcc7fb53e4fdf37ac138f03bf022d6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: d4f719adb029161c510cd5e30beb43bdb8c0a486
+PODFILE CHECKSUM: e330a38f2e34143e839b8ceded1b4fe6af610b5b
 
 COCOAPODS: 1.4.0

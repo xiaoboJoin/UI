@@ -12,4 +12,6 @@ target 'UI' do
   pod 'Masonry'
   pod 'CocoaMarkdown', '~> 1.2.7'
   pod 'SZTextView'
+  pod 'MarqueeLabel-ObjC', '~> 3.3.0'
+  pod 'JCore'
 end
