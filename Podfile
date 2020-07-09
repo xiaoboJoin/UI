@@ -11,4 +11,5 @@ target 'UI' do
   pod 'YYKit', '~> 1.0.9'
   pod 'Masonry'
   pod 'CocoaMarkdown', '~> 1.2.7'
+  pod 'SZTextView'
 end

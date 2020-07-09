@@ -22,6 +22,7 @@
 		1DE0E119D737CBB5AFAEF369 /* Pods-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI/Pods-UI.release.xcconfig"; sourceTree = "<group>"; };
 		6E04E4B98A32EAA58C78A379 /* libPods-UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4ADE2F24B5ADC7007D22AF /* test.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = test.md; path = ../../CocoaMarkdown/CocoaMarkdownTests/Resources/test.md; sourceTree = "<group>"; };
+		9CA7C90D24B5E6CB00323D24 /* test.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = test.md; sourceTree = "<group>"; };
 		9CC8A34324B41C620087D57C /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC8A34624B41C620087D57C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CC8A34724B41C620087D57C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +67,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9CA7C90B24B5E6B100323D24 /* layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = layer;
+			sourceTree = "<group>";
+		};
+		9CA7C90C24B5E6C400323D24 /* markdown */ = {
+			isa = PBXGroup;
+			children = (
+				9CA7C90D24B5E6CB00323D24 /* test.md */,
+			);
+			path = markdown;
+			sourceTree = "<group>";
+		};
+		9CA7C90F24B6BF0700323D24 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		9CA7C91124B6D17600323D24 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
+		9CA7C91224B6D17E00323D24 /* transition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = transition;
+			sourceTree = "<group>";
+		};
 		9CC8A33A24B41C620087D57C = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +124,11 @@
 		9CC8A34524B41C620087D57C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9CA7C91224B6D17E00323D24 /* transition */,
+				9CA7C91124B6D17600323D24 /* runtime */,
+				9CA7C90F24B6BF0700323D24 /* OC */,
+				9CA7C90C24B5E6C400323D24 /* markdown */,
+				9CA7C90B24B5E6B100323D24 /* layer */,
 				9C4ADE2F24B5ADC7007D22AF /* test.md */,
 				9CC8A34624B41C620087D57C /* AppDelegate.h */,
 				9CC8A34724B41C620087D57C /* AppDelegate.m */,
@@ -388,12 +430,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4K2AE4RKM4;
 				INFOPLIST_FILE = UI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bixin.UI;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bixin.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -405,12 +449,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4K2AE4RKM4;
 				INFOPLIST_FILE = UI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bixin.UI;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bixin.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
