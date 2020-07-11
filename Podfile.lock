@@ -15,6 +15,10 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - CocoaMarkdown (1.2.7)
+  - Colours (5.13.0):
+    - Colours/ObjC (= 5.13.0)
+  - Colours/ObjC (5.13.0)
+  - JCore (2.3.0)
   - MarqueeLabel-ObjC (3.3.0)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.1)
@@ -26,21 +30,37 @@ PODS:
 DEPENDENCIES:
   - BlocksKit (~> 2.2.5)
   - CocoaMarkdown (~> 1.2.7)
+  - Colours
+  - JCore
   - MarqueeLabel-ObjC (~> 3.3.0)
   - Masonry
   - ReactiveObjC (~> 3.1.1)
   - SZTextView
   - YYKit (~> 1.0.9)
 
+SPEC REPOS:
+  trunk:
+    - BlocksKit
+    - CocoaMarkdown
+    - Colours
+    - JCore
+    - MarqueeLabel-ObjC
+    - Masonry
+    - ReactiveObjC
+    - SZTextView
+    - YYKit
+
 SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CocoaMarkdown: c0c4707fd46ee03d5b662a3cd93560f0fe2b79b6
+  Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
+  JCore: 7fb83e1e75e00df37e9e1e33f3adae79182ad57c
   MarqueeLabel-ObjC: 696eaa82e4fcc7fb53e4fdf37ac138f03bf022d6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e330a38f2e34143e839b8ceded1b4fe6af610b5b
+PODFILE CHECKSUM: d4f44a177f91dfa4d3726fe578486fee6654e03b
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.9.3

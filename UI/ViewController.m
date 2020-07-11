@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <CocoaMarkdown/CocoaMarkdown.h>
 #import <Masonry.h>
+#import "IUProgressButton.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UITextView* textView;
@@ -20,28 +21,55 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-
+    self.title = @"红色";
+//    self.view.backgroundColor = [UIColor redColor];
+    IUProgressButton *progress = [IUProgressButton buttonWithType:UIButtonTypeCustom];
+    [progress setImage:[UIImage imageNamed:@"icon_applyskill_voice_record"] forState:UIControlStateNormal];
+    [self.view addSubview:progress];
+    [progress mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.height.width.mas_equalTo(80);
+    }];
     
-        [self.navigationController.navigationBar setTranslucent:NO];
-
-    //    [self setEdgesForExtendedLayout:UIRectEdgeNone];
-
-        UIView* view = [UIView new];
+    __block NSInteger limit = 0;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        limit++;
+        if (limit>15) {
+            [timer invalidate];
+            timer = nil;
+        }
+//        progress.hideProgress = !progress.hideProgress;
+        progress.progress = limit/15.0;
+    }];
     
-        view.frame = CGRectMake(0, 0, 100, 100);
-        view.backgroundColor = [UIColor redColor];
-        [self.view addSubview:view];
     
-    CAShapeLayer * layer = [[CAShapeLayer alloc]init];
-    layer.frame = view.bounds;
-    layer.fillColor = [[UIColor blackColor] CGColor];
+    UIButton *img = [UIButton buttonWithType:UIButtonTypeCustom];
+    [img setImage:[UIImage imageNamed:@"icon_applyskill_voice_record"] forState:UIControlStateNormal];
+    [img setFrame:CGRectMake(100,100, 70, 70)];
+    [self.view addSubview:img];
     
-    layer.path = CGPathCreateWithRect(CGRectMake(10, 10, 30, 30), NULL);
     
-    view.layer.mask = layer;
+//    RACObserve() = 
     
-    [self barAnimation];
+//        [self.navigationController.navigationBar setTranslucent:NO];
+//
+//    //    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+//
+//        UIView* view = [UIView new];
+//
+//        view.frame = CGRectMake(0, 0, 100, 100);
+//        view.backgroundColor = [UIColor redColor];
+//        [self.view addSubview:view];
+//
+//    CAShapeLayer * layer = [[CAShapeLayer alloc]init];
+//    layer.frame = view.bounds;
+//    layer.fillColor = [[UIColor blackColor] CGColor];
+//
+//    layer.path = CGPathCreateWithRect(CGRectMake(10, 10, 30, 30), NULL);
+//
+//    view.layer.mask = layer;
+//
+//    [self barAnimation];
     
 //    CAShapeLayer *maskLayer = [CAShapeLayer layer];
 //    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(16, 16)];
@@ -51,6 +79,16 @@
 //    view.layer.mask=maskLayer;
     // Do any additional setup after loading the view.
 }
+
+- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
+{
+    UIViewController *vc = [UIViewController new];
+    vc.view.backgroundColor = [UIColor blueColor];
+    vc.title = @"蓝色";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 - (void)barAnimation {
     
         //  背景 layer
@@ -235,14 +273,6 @@
 //
 //}
 
-- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
-{
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    [self.window setUserInteractionEnabled:NO];
-//    [self.window setBackgroundColor:[UIColor redColor]];
-//    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
-//    self.window.rootViewController = nav;
-//    [self.window makeKeyAndVisible];
-}
+
 
 @end

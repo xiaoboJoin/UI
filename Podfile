@@ -14,4 +14,5 @@ target 'UI' do
   pod 'SZTextView'
   pod 'MarqueeLabel-ObjC', '~> 3.3.0'
   pod 'JCore'
+  pod 'Colours'
 end

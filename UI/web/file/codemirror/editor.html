@@ -1,0 +1,365 @@
+<!doctype html>
+
+<title>CodeMirror</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-phpble=0, minimum-scale=1.0">
+
+<link rel=stylesheet href="./lib/codemirror.css">
+<link rel=stylesheet href="./doc/docs.css">
+<script src="./lib/codemirror.js"></script>
+<script src="./mode/xml/xml.js"></script>
+<script src="./mode/javascript/javascript.js"></script>
+<script src="./mode/python/python.js"></script>
+<script src="./mode/go/go.js"></script>
+<script src="./mode/ruby/ruby.js"></script>
+<script src="./mode/clike/clike.js"></script>
+<script src="./mode/swift/swift.js"></script>
+<script src="./mode/rust/rust.js"></script>
+<script src="./mode/scala/scala.js"></script>
+<script src="./mode/kotlin/kotlin.js"></script>
+<script src="./mode/php/php.js"></script>
+
+<script src="./mode/css/css.js"></script>
+<script src="./mode/htmlmixed/htmlmixed.js"></script>
+<script src="./addon/edit/matchbrackets.js"></script>
+<script src="./doc/activebookmark.js"></script>
+
+<link rel="stylesheet" href="./theme/ambiance.css">
+<link rel="stylesheet" href="./theme/base16-dark.css">
+<link rel="stylesheet" href="./theme/base16-light.css">
+<link rel="stylesheet" href="./theme/dracula.css">
+<link rel="stylesheet" href="./theme/eclipse.css">
+<link rel="stylesheet" href="./theme/idea.css">
+<link rel="stylesheet" href="./theme/lucario.css">
+<link rel="stylesheet" href="./theme/material.css">
+<link rel="stylesheet" href="./theme/midnight.css">
+<link rel="stylesheet" href="./theme/monokai.css">
+<link rel="stylesheet" href="./theme/solarized.css">
+
+
+<!--引入js，绑定Vim-->
+<!-- <link rel="stylesheet" href="./addon/dialog/dialog.css"> -->
+
+<!--支持代码折叠-->
+<!-- <link rel="stylesheet" href="./addon/fold/foldgutter.css"/>
+<script src="./addon/fold/foldcode.js"></script>
+<script src="./addon/fold/foldgutter.js"></script>
+<script src="./addon/fold/brace-fold.js"></script>
+<script src="./addon/fold/comment-fold.js"></script> -->
+
+<!--全屏模式-->
+<!-- <link rel="stylesheet" href="./addon/display/fullscreen.css"> -->
+<!-- <script src="./addon/display/fullscreen.js"></script> -->
+
+<!--括号匹配-->
+<script src="./addon/edit/matchbrackets.js"></script>
+<script src="./addon/format/formatting.js"></script>
+
+<!--自动补全-->
+<link rel="stylesheet" href="./addon/hint/show-hint.css">
+<script src="./addon/hint/show-hint.js"></script>
+<script src="./addon/hint/anyword-hint.js"></script>
+<script src="./addon/hint/javascript-hint.js"></script>
+
+<!-- <!doctype html>
+
+<title>CodeMirror</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-phpble=0, minimum-scale=1.0">
+
+<link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/go/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/ruby/ruby.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/swift/swift.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/rust/rust.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/scala/scala.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/kotlin/kotlin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/php/php.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/ambiance.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/base16-dark.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/base16-light.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/dracula.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/eclipse.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/idea.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/lucario.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/material.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/midnight.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/monokai.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/solarized.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/display/fullscreen.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/display/fullscreen.min.js"></script>
+ -->
+
+<style>
+.CodeMirror {
+    height: 100%;
+    border: 1px solid #F5F6FA;
+    background-color: #F5F6FA;
+}
+.CodeMirror-scroll { max-height: 100%; }
+.CodeMirror pre { padding-left: 7px; line-height: 1.25; }
+.banner { background: #ffc; padding: 6px; border-bottom: 2px solid silver;  }
+.banner div { margin: 0 auto; max-width: 700px; text-align: center; }
+
+html, body, #demotext {
+    height: 100%;
+}
+</style>
+<textarea id=demotext></textarea>
+
+<script>
+/*
+mode: "python", // 语言模式
+theme: "leetcode", // 主题
+keyMap: "sublime", // 快键键风格
+lineNumbers: true, // 显示行号
+smartIndent: true, // 智能缩进
+indentUnit: 4, // 智能缩进单位为4个空格长度
+indentWithTabs: true, // 使用制表符进行智能缩进
+lineWrapping: true, //
+// 在行槽中添加行号显示器、折叠器、语法检测器
+gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"],
+foldGutter: true, // 启用行槽中的代码折叠
+autofocus: true, // 自动聚焦
+matchBrackets: true, // 匹配结束符号，比如"]、}"
+autoCloseBrackets: true, // 自动闭合符号
+styleActiveLine: true, // 显示选中行的样式
+*/
+var editor = CodeMirror.fromTextArea(document.getElementById("demotext"), {
+     lineNumbers: true,
+     mode: "python",
+     lineWrapping: true,
+     foldGutter: true,
+     styleActiveLine: true,
+     autoCloseBrackets: true,
+     matchBrackets: true,
+     indentUnit: 4,
+     completeSingle: false,
+     gutters: ["CodeMirror-linenumbers"],
+     extraKeys: {"Ctrl": "autocomplete"},
+ });
+
+ /*
+function ignoreToken(text) {
+    return ['\n'].indexOf(text) >= 0
+}
+editor.on("change", function(editor, change) {//任意键触发autocomplete
+   if (change.origin == "+input"){
+       var text = change.text;
+       window.alert(text)
+       if(ignoreToken(text) === false) {
+            setTimeout(function() { editor.execCommand("autocomplete"); }, 20);
+       }
+   }
+});
+ */
+
+
+
+editor.on("keyup", function (cm, event) {
+if (!cm.state.completionActive &&   /*Enables keyboard navigation in autocomplete list*/
+     event.keyCode > 64 && event.keyCode < 91){// only when a letter key is pressed
+         CodeMirror.commands.autocomplete(cm, null, {completeSingle: false});
+    }
+});
+
+ editor.setOption("extraKeys", {
+    // Tab键换成4个空格
+    "Tab": function(cm) {
+        var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+        cm.replaceSelection(spaces);
+    },
+    // F11键切换全屏
+    "F11": function(cm) {
+        cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+    },
+    // Esc键退出全屏
+    "Esc": function(cm) {
+        if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+    }
+});
+
+let codeSnippets = [
+                    {
+                    "lang":"C++",
+                    "langSlug":"cpp",
+                    "code":"class Solution {\npublic:\n    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {\n        \n    }\n};",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Java",
+                    "langSlug":"java",
+                    "code":"class Solution {\n    public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n        \n    }\n}",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Python",
+                    "langSlug":"python",
+                    "code":"class Solution(object):\n    def findMedianSortedArrays(self, nums1, nums2):\n        \"\"\"\n        :type nums1: List[int]\n        :type nums2: List[int]\n        :rtype: float\n        \"\"\"\n        ",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Python3",
+                    "langSlug":"python3",
+                    "code":"class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        ",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"C",
+                    "langSlug":"c",
+                    "code":"\n\ndouble findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size){\n\n}\n\n",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"C#",
+                    "langSlug":"csharp",
+                    "code":"public class Solution {\n    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {\n        \n    }\n}",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"JavaScript",
+                    "langSlug":"javascript",
+                    "code":"/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @return {number}\n */\nvar findMedianSortedArrays = function(nums1, nums2) {\n    \n};",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Ruby",
+                    "langSlug":"ruby",
+                    "code":"# @param {Integer[]} nums1\n# @param {Integer[]} nums2\n# @return {Float}\ndef find_median_sorted_arrays(nums1, nums2)\n    \nend",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Swift",
+                    "langSlug":"swift",
+                    "code":"class Solution {\n    func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {\n        \n    }\n}",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Go",
+                    "langSlug":"golang",
+                    "code":"func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {\n    \n}",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Scala",
+                    "langSlug":"scala",
+                    "code":"object Solution {\n    def findMedianSortedArrays(nums1: Array[Int], nums2: Array[Int]): Double = {\n        \n    }\n}",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Kotlin",
+                    "langSlug":"kotlin",
+                    "code":"class Solution {\n    fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {\n        \n    }\n}",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"Rust",
+                    "langSlug":"rust",
+                    "code":"impl Solution {\n    pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {\n        \n    }\n}",
+                    "__typename":"CodeSnippetNode"
+                    },
+                    {
+                    "lang":"PHP",
+                    "langSlug":"php",
+                    "code":"class Solution {\n\n    /**\n     * @param Integer[] $nums1\n     * @param Integer[] $nums2\n     * @return Float\n     */\n    function findMedianSortedArrays($nums1, $nums2) {\n        \n    }\n}",
+                    "__typename":"CodeSnippetNode"
+                    }
+                    ]
+
+let template = codeSnippets[0]["code"]
+
+editor.getDoc().setValue(template)
+window.editor = editor
+
+function b64EncodeUnicode(str) {
+    // first we use encodeURIComponent to get percent-encoded UTF-8,
+    // then we convert the percent encodings into raw bytes which
+    // can be fed into btoa.
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }));
+}
+
+function b64DecodeUnicode(str) {
+    // Going backwards: from bytestream, to percent-encoding, to original string.
+    return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
+
+
+window.setEditorContent = function(content) {
+    content = b64DecodeUnicode(content);
+    editor.getDoc().setValue(content);
+}
+
+window.setEditorLang = function(lang) {
+    lang = lang.toLowerCase();
+    if (lang === "python3") {
+        lang = "python";
+    }
+    editor.setOption("mode", lang)
+}
+
+
+
+window.setOption = function(key, value) {
+    if (key === "theme") {
+        editor.getDoc().setValue(editor.getDoc().getValue().replace("# theme", "# " + value));
+    }
+    if (key === "set_mode") {
+        var i;
+        for (i = 0; i < codeSnippets.length; i++) {
+            if (codeSnippets[i]["lang"] === value) {
+                editor.getDoc().setValue("# " + editor.getOption("theme") + "\n" + codeSnippets[i]["code"]);
+            }
+        }
+        if (value === "Python3" || value === "Python") {
+            value = "text/x-python"
+        } else if (value === "C#") {
+            value = "text/x-csharp"
+        } else if (value === "C") {
+            value = "text/x-csrc"
+        } else if (value == "C++") {
+            value = "text/x-c++src"
+        } else if (value === "Java") {
+            value = "text/x-java"
+        } else if (value === "Scala") {
+            value = "text/x-scala"
+        } else if (value === "Go") {
+            value = "text/x-go"
+        } else if (value === "Kotlin") {
+            value = "text/x-kotlin"
+        } else if (value === "JavaScript") {
+            value = "text/javascript"
+        } else if (value === "Rust") {
+            value = "text/x-rustsrc"
+        } else if (value === "Ruby") {
+            value = "text/x-ruby"
+        } else if (value === "PHP") {
+            value = "text/x-php"
+        }
+    }
+    editor.setOption(key, value)
+}
+
+window.getEditorContent = function() {
+    var content = editor.getDoc().getValue()
+    return b64EncodeUnicode(content)
+}
+
+window.appendText = function(s) {
+    editor.replaceRange(s, CodeMirror.Pos(editor.lastLine()))
+}
+
+</script>
+
+
